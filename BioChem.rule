@@ -1,0 +1,76 @@
+@RULE BioChem
+
+1 births more 1s
+1 turns into 2
+2 turns into 3
+3 dies
+
+this was not a variation on brians brain, it just kinda ended up like that
+made by cactusjupiter
+
+color schemes:
+original:
+1 100 150 200
+2 50 110 150
+3 40 80 110
+
+classic contrast:
+1 100 150 200
+2 180 120 80
+3 35 150 70
+improved contrast:
+1 40 130 225
+2 180 120 80
+3 75 140 30
+
+cinnabar:
+1 200 100 120
+2 150 75 90
+3 115 50 75
+
+
+@TABLE
+
+# Format: c,n,ne,e,se,s,sw,w,nw,c'
+
+n_states:4
+neighborhood: Moore
+symmetries:permute
+var a = {1,2,3}
+var b = a
+var c = a
+var d = a
+var e = a
+var f = a
+var na = {0,1,2,3}
+var nb = na
+var nc = na
+var nd = na
+var ne = na
+var nf = na
+var ng = na
+var nh = na
+var nba = {0,1,2}
+
+# birfquake
+0,1,1,nba,0,0,0,0,0,1
+0,1,1,1,3,0,0,0,0,2
+
+# fast death by overpop
+1,a,b,c,d,e,na,nb,nc,3
+2,a,b,c,d,e,f,na,nb,0
+
+# them changes
+2,a,b,c,d,na,0,0,0,1
+3,1,1,1,a,na,0,0,0,2
+
+# if nothing else, turn to next ticker
+1,na,nb,nc,nd,ne,nf,ng,nh,2
+2,na,nb,nc,nd,ne,nf,ng,nh,3
+3,na,nb,nc,nd,ne,nf,ng,nh,0
+
+@COLORS
+1 40 130 225
+2 180 120 80
+3 75 140 30
+
